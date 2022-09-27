@@ -4,7 +4,9 @@ import jwtDecode from "jwt-decode";
 
 function logout() {
   // supprimer le authToken du local storage
+  window.localStorage.removeItem("authToken");
   // supprimer les autorisations du header
+  delete axios.defaults.headers.Authorization;
   // vider le contexte
 }
 

@@ -57,7 +57,7 @@ const postUser = (req, res) => {
   models.users
     .insert(user)
     .then(([result]) => {
-      res.location(`/users/${result.insertId}`).sendStatus(201);
+      res.location(`api/users/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);

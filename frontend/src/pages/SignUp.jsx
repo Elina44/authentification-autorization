@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GoHomeButton from "@components/GoHomeButton";
+import axios from "axios";
 
 export default function SignUp() {
   const [formState, setFormState] = useState({
@@ -13,6 +14,9 @@ export default function SignUp() {
 
   const handleSignUp = () => {
     // Requete création d'un utilisateur
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users`, {
+      ...formState,
+    });
   };
 
   return (
